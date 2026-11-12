@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>БЫТОВОЙ — техника для дома</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <header class="status"><span>9:41</span><span class="status-icons">▮▮▮　◉　▰</span></header>
+  <main id="app">
+    <section class="screen active" id="home">
+      <div class="topline"><div class="brand">БЫТОВОЙ</div><div class="city">◎ <span>Арзамас</span></div><button class="round" aria-label="Уведомления">♧</button></div>
+      <div class="search-row"><label class="search">⌕ <input id="searchInput" placeholder="Найти технику для дома"></label><button class="filter-btn" id="filterOpen">☷</button></div>
+      <article class="promo"><div class="promo-copy"><small>ДОМ СТАНОВИТСЯ БЛИЖЕ</small><h2>Большие планы.<br>Маленькие цены.</h2><p>Скидки на технику до 30%</p><button class="link-btn" data-go="catalog">Выбрать →</button></div><img src="kitchen.jpg" alt="Современная кухня"></article>
+      <div class="categories">
+        <button data-category="Для стирки"><span>▣</span>Для стирки</button><button data-category="Для кухни"><span>▤</span>Для кухни</button><button data-category="Для уборки"><span>◉</span>Для уборки</button><button data-category="Для кофе"><span>▧</span>Для кофе</button>
+      </div>
+      <div class="section-heading"><h2>Выбирают чаще</h2><button class="link-btn" data-go="catalog">Все</button></div>
+      <div class="product-grid" id="homeProducts"></div>
+    </section>
+
+    <section class="screen" id="catalog">
+      <div class="page-heading"><button class="back" data-go="home">‹</button><h1>Каталог</h1><button class="icon-btn" id="catalogFilter">☷</button></div>
+      <div class="search-row"><label class="search">⌕ <input id="catalogSearch" placeholder="Найти технику для дома"></label></div>
+      <div class="chips"><button class="chip active" data-filter="Все">Все</button><button class="chip" data-filter="Для стирки">Стирка</button><button class="chip" data-filter="Для кухни">Кухня</button><button class="chip" data-filter="Для кофе">Кофе</button></div>
+      <div class="catalog-list" id="catalogProducts"></div>
+    </section>
+
+    <section class="screen" id="product">
+      <div class="page-heading"><button class="back" data-go="home">‹</button><h3>О товаре</h3><div class="actions"><button class="icon-btn">♧</button><button class="icon-btn" id="detailHeart">♡</button></div></div>
+      <div class="hero-product"><span class="discount">−14%</span><img id="detailImage" src="washer.jpg" alt="Стиральная машина"></div>
+      <div class="dots"><i></i><i></i><i></i></div>
+      <div class="eyebrow">BOSCH&nbsp; / &nbsp;СТИРАЛЬНЫЕ МАШИНЫ</div>
+      <h1 class="detail-title" id="detailTitle">Стиральная машина<br>Bosch Serie 4</h1>
+      <div class="rating-line"><b>★ 4,9</b><a>124 отзыва</a><span>В наличии</span></div>
+      <div class="spec"><span>Цвет: белый</span><span class="swatch"></span></div>
+      <div class="spec muted"><span>Загрузка</span><b>8 кг</b></div><div class="spec muted"><span>Отжим</span><b>1 200 об/мин</b></div><div class="spec muted"><span>Габариты, Ш × Г × В</span><b>60 × 55 × 85 см</b></div>
+      <button class="all-spec">Все характеристики <span>›</span></button>
+      <div class="price-row"><strong id="detailPrice">42 990 ₽</strong><del>49 990 ₽</del></div><p class="monthly">от 3 583 ₽ / мес.</p>
+      <button class="primary add-detail" id="detailAdd">♧　Добавить в корзину</button>
+    </section>
+
+    <section class="screen" id="favorites">
+      <div class="page-heading"><h1>Избранное</h1><span class="muted">Сохранённые товары</span></div>
+      <div class="catalog-list" id="favoriteProducts"></div>
+      <div class="empty hidden" id="emptyFavorites">Пока ничего нет. Добавьте товары в избранное ♡</div>
+    </section>
+
+    <section class="screen" id="cart">
+      <div class="cart-heading"><h1>Корзина</h1><span id="cartCount">2 товара</span><button class="link-btn" id="clearCart">Очистить</button></div>
+      <div id="cartItems"></div>
+      <div class="delivery"><span class="truck">♧</span><div><b>Доставка 14 ноября</b><small>Арзамас, укажите адрес</small></div><span class="arrow">›</span></div>
+      <div class="promo-code"><b>КОПЕР</b><span>Промокод применён</span><strong>✓</strong></div>
+      <div class="totals"><div><span>Товары, <i id="itemsQty">2</i> шт.</span><b id="subtotal">72 980 ₽</b></div><div><span>Скидка по промокоду</span><b class="blue">−3 000 ₽</b></div><div><span>Доставка</span><b>Бесплатно</b></div><hr><div class="total"><strong>Итого</strong><strong id="total">69 980 ₽</strong></div></div>
+      <button class="primary checkout" id="checkout">Перейти к оформлению</button>
+    </section>
+  </main>
+  <nav class="tabbar">
+    <button class="tab active" data-tab="home"><span>⌂</span>Главная</button>
+    <button class="tab" data-tab="catalog"><span>▦</span>Каталог</button>
+    <button class="tab" data-tab="favorites"><span>♡</span>Избранное</button>
+    <button class="tab" data-tab="cart"><span>🛒</span>Корзина<em id="cartBadge">2</em></button>
+    <button class="tab" data-tab="profile"><span>♙</span>Профиль</button>
+  </nav>
+  <div class="toast" id="toast"></div>
+  <div class="modal hidden" id="filterModal"><div class="modal-card"><div class="modal-head"><b>Фильтры</b><button id="filterClose">✕</button></div><p>Категория</p><div class="filter-options"><button class="chip active">Все товары</button><button class="chip">В наличии</button><button class="chip">Со скидкой</button></div><p>Цена</p><div class="price-inputs"><input placeholder="От 0"><input placeholder="До 100 000"></div><button class="primary" id="applyFilters">Показать товары</button></div></div>
+  <div class="safe-area"></div>
+</div>
+<script src="app.js"></script>
+</body></html>
